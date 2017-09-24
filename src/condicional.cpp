@@ -11,81 +11,61 @@
 #include <string>
 #include "sequencial.hpp"
 #include "menuControl.hpp"
+#include <typeinfo>
+
 
 using namespace std;
 
 void estruturaCondicional1() {
+    
+
     int menu = 1;
     while(menu == 1){
         menu =0;
         
         system("clear");
         
-        int num1 = 0,num2 = 0,num3 = 0;
+        int nums[3] = {};
+        float input;
         
         cout << "Digite 3 numeros inteiros:\n";
-        
-        while(true){
-            cout << "Numero 1: ";
-            cin  >> num1;
-            if (typeid(num1) == typeid(float)) {
-                cout << "Numero informado invalido (REAL)";
-            }
-           
-            if (typeid(num1) == typeid(int)) {
-                break;
-            }
-        }
-
-        while(true) {
-            cout << "Numero 2: ";
-            cin  >> num2;
-            if (typeid(num2) == typeid(float)) {
-                cout << "Numero informado invalido (REAL)";
-            }
-            
-            if (typeid(num2) == typeid(int)) {
-                break;
+        for(int i = 0; i < 3; i++) {
+            while(true) {
+                cout << "Numero " << i+1 << ": ";
+                cin  >> input;
+                if (input/float(int(input)) > 1){
+                    cout << "Informe um numero valido(inteiro)\n";
+                    cin.clear();
+                }
+                else{
+                    nums[i] = input;
+                    break;
+                }
             }
         }
         
-        while(true) {
-            cout << "Numero 3: ";
-            cin  >> num3;
-            if (typeid(num3) == typeid(float)) {
-                cout << "Numero informado invalido (REAL)";
-            }
-            
-            if (typeid(num3) == typeid(int)) {
-                break;
-            }
-        }
-
-
-        
-        
-        if (num1 <= num2 && num2 <= num3)
+        if (nums[0] <= nums[1] && nums[1] <= nums[2])
             cout << "Segue-se os numeros em ordem crescente:["
-                 << num1 << ',' << num2 << ',' << num3 << "]\n";
+                 << nums[0] << ',' << nums[1] << ',' << nums[2] << "]\n";
         
-        else if (num1 <= num3 && num3 <= num2)
+        else if (nums[0] <= nums[2] && nums[2] <= nums[1])
             cout << "Segue-se os numeros em ordem crescente:["
-                 << num1 << ',' << num3 << ',' << num2 << "]\n";
+                 << nums[0] << ',' << nums[2] << ',' << nums[1] << "]\n";
         
-        else if (num2 <= num1 && num1 <= num3)
+        else if (nums[1] <= nums[0] && nums[0] <= nums[2])
             cout << "Segue-se os numeros em ordem crescente:["
-                 << num2 << ',' << num1 << ',' << num3 << "]\n";
+                 << nums[1] << ',' << nums[0] << ',' << nums[2] << "]\n";
         
-        else if (num2 <= num1 && num3 <= num1)
+        else if (nums[1] <= nums[0] && nums[2] <= nums[0])
             cout << "Segue-se os numeros em ordem crescente:["
-                 << num2 << ',' << num3 << ',' << num1 << "]\n";
+                 << nums[1] << ',' << nums[2] << ',' << nums[0] << "]\n";
         
-        else if (num3 <= num1 && num1 <= num2)
+        else if (nums[2] <= nums[0] && nums[0] <= nums[1])
             cout << "Segue-se os numeros em ordem crescente:["
-                 << num3 << ',' << num1 << ',' << num2 << "]\n";
+                 << nums[2] << ',' << nums[0] << ',' << nums[1] << "]\n";
         
         else cout << "Segue-se os numeros em ordem crescente:["
-                  << num3 << ',' << num2 << ',' << num1 << "]\n\n";
+                  << nums[2] << ',' << nums[1] << ',' << nums[0] << "]\n\n";
 
         
         
