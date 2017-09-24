@@ -22,23 +22,21 @@ void estruturaSequencialFG1() {
         system("clear");
         
         float catetoA=0,catetoB=0,hipotenusa=0;
-        bool  questionAgain = true;
         
-        while(questionAgain == true) {
+        while(true) {
             cout << "Digite o valor de um cateto: ";
             cin  >> catetoA;
             if(catetoA <= 0)
                 cout << "O Numero informado e invalido(0 ou negativo).\n";
-            else questionAgain = false;
+            else break;
         }
-        questionAgain = true;
         
-        while(questionAgain == true) {
+        while(true) {
             cout << "Digite o valor do outro cateto: ";
             cin  >> catetoB;
             if(catetoB <= 0)
                 cout << "O Numero informado e invalido(0 ou negativo).\n";
-            else questionAgain = false;
+            else break;
         }
         system("clear");
         
@@ -78,14 +76,13 @@ void estruturaSequencialFG2() {
         system("clear");
         float raio = 0,comprimento,area;
         const double pi = 3.1415926535;
-        bool questionAgain = true;
         
-        while(questionAgain == true) {
+        while(true) {
             cout << "Informe o raio da circuferencia: ";
             cin  >> raio;
             if(raio <= 0)
                 cout << "O Numero informado e invalido(0 ou negativo).\n";
-            else questionAgain = false;
+            else break;
         }
         system("clear");
         
@@ -128,15 +125,14 @@ void estruturaSequencialFG3() {
         system("clear");
         
         float lado = 0,area = 0,perimetro = 0,diagonal = 0;
-        bool questionAgain = true;
         
-        while(questionAgain == true) {
+        while(true) {
             cout << "Informe o lado do quadrado:";
             cin  >> lado;
             
             if(lado <= 0)
                 cout << "O Numero informado e invalido(0 ou negativo).\n";
-            else questionAgain = false;
+            else break;
             
         }
         system("clear");
@@ -171,14 +167,13 @@ void estruturaSequencialFG3() {
 
 void estruturaSequencialFG4() {
     float lado = 0,area=0,diagonalMaior=0,perimetro=0,diagonalMenor=0;
-    bool questionAgain = true;
     
-    while (questionAgain == true) {
+    while (true) {
         cout << "Digite a Diagonal Maior do Losango: ";
         cin  >> diagonalMaior;
         if (diagonalMaior <= 0)
             cout << "O Numero informado e invalido(0 ou negativo).\n";
-        else questionAgain = false;
+        else break;
     }
     system("clear");
     
@@ -268,9 +263,7 @@ void estruturaSequencial2() {
 
 void fGeometrica() {
     
-    bool figuraGeometrica = true;
-    
-    while(figuraGeometrica == true) {
+    while(true) {
         system("clear");
         
         int selected;
@@ -314,9 +307,8 @@ void fGeometrica() {
 }
 
 void estruturaSequencialMenu() {
-    bool menu = false;
     
-   while(menu == false) {
+   while(true) {
         int selected = 0;
     
         cout << "1 - Figuras Geometricas\n"

@@ -22,12 +22,10 @@ void estruturaCondicional1() {
         system("clear");
         
         int num1 = 0,num2 = 0,num3 = 0;
-        bool questionAgain = true;
-        
         
         cout << "Digite 3 numeros inteiros:\n";
         
-        while(questionAgain==true){
+        while(true){
             cout << "Numero 1: ";
             cin  >> num1;
             if (typeid(num1) == typeid(float)) {
@@ -35,11 +33,11 @@ void estruturaCondicional1() {
             }
            
             if (typeid(num1) == typeid(int)) {
-                questionAgain = false;
+                break;
             }
         }
-        questionAgain = true;
-        while(questionAgain==true){
+
+        while(true) {
             cout << "Numero 2: ";
             cin  >> num2;
             if (typeid(num2) == typeid(float)) {
@@ -47,12 +45,11 @@ void estruturaCondicional1() {
             }
             
             if (typeid(num2) == typeid(int)) {
-                questionAgain = false;
+                break;
             }
         }
-        questionAgain = true;
         
-        while(questionAgain==true){
+        while(true) {
             cout << "Numero 3: ";
             cin  >> num3;
             if (typeid(num3) == typeid(float)) {
@@ -60,7 +57,7 @@ void estruturaCondicional1() {
             }
             
             if (typeid(num3) == typeid(int)) {
-                questionAgain = false;
+                break;
             }
         }
 
@@ -96,10 +93,9 @@ void estruturaCondicional1() {
 
         system("clear");
  
-        cout
-        << "1-Repetir o exercicios.\n"
-        << "2-Voltar ao menu anterior.\n"
-        << "3-Voltar ao menu principal.\n";
+        cout << "1-Repetir o exercicios.\n"
+             << "2-Voltar ao menu anterior.\n"
+             << "3-Voltar ao menu principal.\n";
         cin  >> menu;
         
         switch (menu) {
@@ -120,10 +116,9 @@ void estruturaCondicional2() {
     int menu = 1;
     while(menu == 1){
         menu =0;
-        cout
-        << "1-Repetir o exercicios.\n"
-        << "2-Voltar ao menu anterior.\n"
-        << "3-Voltar ao menu principal.\n";
+        cout << "1-Repetir o exercicios.\n"
+             << "2-Voltar ao menu anterior.\n"
+             << "3-Voltar ao menu principal.\n";
         cin  >> menu;
         
         switch (menu) {
@@ -242,10 +237,9 @@ void estruturaCondicional5() {
              cout << "\nO Emprestimo nao pode ser concedido pois o valor das parcelas sao maiores que 30% do salario do empregado.\n";
         else cout << "\n O Emprestimo pode ser concedido.Salario do empregado pode manter o valor das parcelas.\n";
             
-        cout
-        << "1-Repetir o exercicios.\n"
-        << "2-Voltar ao menu anterior.\n"
-        << "3-Voltar ao menu principal.\n";
+        cout << "1-Repetir o exercicios.\n"
+             << "2-Voltar ao menu anterior.\n"
+             << "3-Voltar ao menu principal.\n";
         cin  >> menu;
         
         switch (menu) {
@@ -266,10 +260,9 @@ void estruturaCondicional6() {
     int menu = 1;
     while(menu == 1){
         menu =0;
-        cout
-        << "1-Repetir o exercicios.\n"
-        << "2-Voltar ao menu anterior.\n"
-        << "3-Voltar ao menu principal.\n";
+        cout << "1-Repetir o exercicios.\n"
+             << "2-Voltar ao menu anterior.\n"
+             << "3-Voltar ao menu principal.\n";
         cin  >> menu;
         
         switch (menu) {
@@ -316,13 +309,10 @@ void estruturaCondicional7() {
             }
 
         }
-        
-        
-        
-        cout
-        << "1-Repetir o exercicios.\n"
-        << "2-Voltar ao menu anterior.\n"
-        << "3-Voltar ao menu principal.\n";
+
+        cout << "1-Repetir o exercicios.\n"
+             << "2-Voltar ao menu anterior.\n"
+             << "3-Voltar ao menu principal.\n";
         cin  >> menu;
         
         switch (menu) {
@@ -343,10 +333,9 @@ void estruturaCondicional8() {
     int menu = 1;
     while(menu == 1){
         menu =0;
-        cout
-        << "1-Repetir o exercicios.\n"
-        << "2-Voltar ao menu anterior.\n"
-        << "3-Voltar ao menu principal.\n";
+        cout << "1-Repetir o exercicios.\n"
+             << "2-Voltar ao menu anterior.\n"
+             << "3-Voltar ao menu principal.\n";
         cin  >> menu;
         
         switch (menu) {
