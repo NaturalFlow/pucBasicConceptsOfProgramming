@@ -50,7 +50,10 @@ void estruturaSequencialFG1() {
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
         
-        cin  >> menu;
+        do{
+            cin  >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
+        
         
         system("clear");
         
@@ -97,7 +100,10 @@ void estruturaSequencialFG2() {
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
         
-        cin  >> menu;
+        do{
+            cin  >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
+
         
         switch (menu) {
             case 1:
@@ -148,7 +154,10 @@ void estruturaSequencialFG3() {
              << "1-Repetir o exercicios.\n"
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
-        cin  >> menu;
+        do{
+            cin  >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
+
         
         switch (menu) {
             case 1:
@@ -219,8 +228,6 @@ void estruturaSequencial1() {
         cout << "\nVelocidade media do veiculo: ";
         cin  >> velocidadeMediaKMH;
         
-        
-        
         consumoEstimadoG = (tempoViagemHoras * velocidadeMediaKMH)/consumoGPeloTipo;
         consumoEstimadoEtanol = consumoEstimadoG + consumoEstimadoG*0.4;
         valorTotal = (consumoEstimadoG * 3.8) + (consumoEstimadoEtanol * 2.9);
@@ -237,8 +244,10 @@ void estruturaSequencial1() {
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
         
-        cin  >> menu;
-        
+        do{
+            cin >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
+
         switch (menu) {
             case 1:
                 break;
@@ -251,10 +260,6 @@ void estruturaSequencial1() {
             default:
                 break;
         }
-
-        
-        
-        
     }
 }
 
@@ -274,7 +279,10 @@ void fGeometrica() {
              << "5 - Voltar ao Menu Inicial"
              << "\n\nAperte o numero referente ao exercicio que deseja executar e aperte enter: ";
         
-        cin  >> selected;
+        do{
+            cin >> selected;
+        }while (testeMenuOptions(selected, 5) == false);
+
         
         system("clear");
         
@@ -316,7 +324,9 @@ void estruturaSequencialMenu() {
              << "3 - Exercicio Prestacao\n"
              << "4 - Voltar ao menu inicial\n\n"
              << "Digite o numero da categoria e aperte enter: ";
-        cin  >> selected;
+       do{
+           cin >> selected;
+       }while (testeMenuOptions(selected, 4) == false);
     
         system("clear");
     

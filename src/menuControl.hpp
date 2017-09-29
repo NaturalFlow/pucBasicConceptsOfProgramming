@@ -14,3 +14,4 @@
 #endif /* menuControl_hpp */
 
 void menuControl();
+bool testeMenuOptions(int n,int tamanho);

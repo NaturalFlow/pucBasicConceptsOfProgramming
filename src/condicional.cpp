@@ -11,7 +11,7 @@
 #include <string>
 #include "sequencial.hpp"
 #include "menuControl.hpp"
-#include <typeinfo>
+
 
 
 using namespace std;
@@ -76,7 +76,9 @@ void estruturaCondicional1() {
         cout << "1-Repetir o exercicios.\n"
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
-        cin  >> menu;
+        do{
+            cin >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
         
         switch (menu) {
             case 1:
@@ -96,10 +98,26 @@ void estruturaCondicional2() {
     int menu = 1;
     while(menu == 1){
         menu =0;
+        /*VARIAVEIS*/
+        string capital;
+        
+        /*ENTRADAS*/
+        cout << "Digite o nome da capital de Goias: \n";
+        getline(cin,capital);
+        
+        system("clear");
+
+        /*SAIDAS*/
+        if (capital == "Goiania" || capital == "GOIANIA")
+            cout << "Resposta correta \n";
+        else cout << "Resposta Incorreta\n";
+        
         cout << "1-Repetir o exercicios.\n"
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
-        cin  >> menu;
+        do{
+            cin >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
         
         switch (menu) {
             case 1:
@@ -141,8 +159,6 @@ void estruturaCondicional3() {
             case '/':
                 cout << "resultado do quociente: " << num1 / num2;
                 break;
-                
-                
             default:
                 break;
         }
@@ -151,7 +167,9 @@ void estruturaCondicional3() {
              << "1-Repetir o exercicios.\n"
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
-        cin  >> menu;
+        do{
+            cin >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
         
         switch (menu) {
             case 1:
@@ -170,15 +188,40 @@ void estruturaCondicional3() {
 void estruturaCondicional4() {
     int menu = 1;
     while(menu == 1){
-        
         menu =0;
+        
+        //Variaveis
+        int diasAtraso;
+        float valorConta, multa, jurosTotal, totalPagar;
+        
+        //Entradas
+        cout << "Informe o valor da conta R$: ";
+        cin  >>valorConta;
+        cout << "Informe os dias de atraso..: ";
+        cin  >>diasAtraso;
+        
+        //Processamento
+        jurosTotal = (diasAtraso/30)+valorConta*0.09;
+        multa      = valorConta*0.05;
+        totalPagar = valorConta+multa+jurosTotal;
+        
+        //Saidas
+        cout.precision(2);
+        cout <<  fixed
+        << "Dias de atraso..: " << int(diasAtraso)
+        << "\nValor da Conta..: R$ " << valorConta
+        << "\nTotal da Multa .: R$ " << multa
+        << "\nJuros Total.....: R$ " << jurosTotal
+        << "\nPreÁo final R$..: R$ " << totalPagar <<"\n";
         
         
         cout << '\n'
         << "1-Repetir o exercicios.\n"
         << "2-Voltar ao menu anterior.\n"
         << "3-Voltar ao menu principal.\n";
-        cin  >> menu;
+        do{
+            cin >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
         
         switch (menu) {
             case 1:
@@ -220,7 +263,9 @@ void estruturaCondicional5() {
         cout << "1-Repetir o exercicios.\n"
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
-        cin  >> menu;
+        do{
+            cin >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
         
         switch (menu) {
             case 1:
@@ -240,10 +285,52 @@ void estruturaCondicional6() {
     int menu = 1;
     while(menu == 1){
         menu =0;
+        
+        /*VARIAVEIS*/
+        string nome;
+        float nota1, nota2, nota3, nota4;
+        float N1, N2, mediaFinal, frequencia;
+        int aulas, faltas, presenca;
+        
+        /*ENTRADAS*/
+        
+        cout << "Informe o Nome do Aluno: \n";
+        getline(cin,nome);
+        cout << "informe a primeira nota do aluno   : \n";
+        cin  >>nota1;
+        cout << "informe a segunda nota do aluno    : \n";
+        cin  >>nota2;
+        cout << "informe a terceira nota do aluno   : \n";
+        cin  >>nota3;
+        cout << "informe a quarta nota do aluno     : \n";
+        cin  >>nota4;
+        cout << "informe o numero de aulas dadas    : \n";
+        cin  >>aulas;
+        cout << "informe o numero de faltas do aluno: \n";
+        cin  >>faltas;
+        
+        system("clear");
+        /*PROCESSAMENTO/CALCULOS*/
+        N1         = (nota1+nota2)/2;
+        N2         = (nota3+nota3)/2;
+        mediaFinal = (N1*0.4+N2*0.6);
+        presenca   = (aulas - faltas);
+        frequencia = (presenca*100)/aulas;
+        
+        /*SAIDAS*/
+        cout <<"O aluno " << nome<< " obteve media final de : "<< mediaFinal <<"\n";
+        cout <<"Sua frequencia foi de: "<<frequencia<<"%\n";
+        
+        if (mediaFinal >= 7.5 && frequencia >= 75)
+             cout << "O aluno foi aprovado. \n\n";
+        else cout << "O aluno foi reprovado.\n\n";
+        
         cout << "1-Repetir o exercicios.\n"
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
-        cin  >> menu;
+        do{
+            cin >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
         
         switch (menu) {
             case 1:
@@ -293,7 +380,9 @@ void estruturaCondicional7() {
         cout << "1-Repetir o exercicios.\n"
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
-        cin  >> menu;
+        do{
+            cin >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
         
         switch (menu) {
             case 1:
@@ -313,10 +402,29 @@ void estruturaCondicional8() {
     int menu = 1;
     while(menu == 1){
         menu =0;
+        float resultado = 0, altura = 0;
+        char sexo = 0;
+        
+        cout << " Digite sua altura: \n";
+        cin  >> altura;
+        cout << " Digite seu sexo [F] para feminino ou [M] para masculino: \n";
+        cin  >> sexo;
+        
+        if(sexo == 'M'||sexo == 'M')
+            resultado = 72.7*altura - 58;
+        else if(sexo == 'F'||sexo == 'f')
+            resultado = 62.1*altura - 44.7;
+        
+        system("clear");
+        
+        cout <<" O seu peso ideal e : " << resultado <<"kg\n\n";
+        
         cout << "1-Repetir o exercicios.\n"
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
-        cin  >> menu;
+        do{
+            cin >> menu;
+        }while (testeMenuOptions(menu, 3) == false);
         
         switch (menu) {
             case 1:
@@ -349,7 +457,9 @@ void estruturaCondicionalMenu() {
         << "8 – Peso Ideal\n"
         << "9 – Voltar ao Menu Principal\n\n"
         << "Digite o numero da categoria e aperte enter: ";
-        cin  >> selected;
+        do{
+            cin >> selected;
+        }while (testeMenuOptions(selected, 9) == false);
         
         system("clear");
         

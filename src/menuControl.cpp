@@ -51,3 +51,16 @@ void menuControl() {
     }
     
 }
+bool testeMenuOptions(int n,int tamanho) {
+    if (n < 1 || n > tamanho) {
+        cout << "Essa opção nao existe digite novamento: " ;
+        return false;
+    }
+    else return true;
+}
+
+
+
+
+
+
