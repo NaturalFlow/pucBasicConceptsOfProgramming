@@ -447,16 +447,16 @@ void estruturaCondicionalMenu() {
     while(menu == false) {
         int selected = 0;
         
-        cout << "1 – Ordenar 3 Numeros Inteiros\n"
-        << "2 – Receber o nome da capital de Goias\n"
-        << "3 – Calculadora\n"
-        << "4 - Calcular o Quadrado e a Raiz Quadrada\n"
-        << "5 – Margem de consignaçao\n"
-        << "6 – Media Final e Frequencias\n"
-        << "7 - Alunos Pelo Nome\n"
-        << "8 – Peso Ideal\n"
-        << "9 – Voltar ao Menu Principal\n\n"
-        << "Digite o numero da categoria e aperte enter: ";
+        cout << "  1 – Ordenar 3 Numeros Inteiros\n"
+        << "  2 – Receber o nome da capital de Goias\n"
+        << "  3 – Calculadora\n"
+        << "  4 - Calcular o Quadrado e a Raiz Quadrada\n"
+        << "  5 – Margem de consignaçao\n"
+        << "  6 – Media Final e Frequencias\n"
+        << "  7 - Alunos Pelo Nome\n"
+        << "  8 – Peso Ideal\n"
+        << "  9 – Voltar ao Menu Principal\n\n"
+        << " Opção: ";
         do{
             cin >> selected;
         }while (testeMenuOptions(selected, 9) == false);

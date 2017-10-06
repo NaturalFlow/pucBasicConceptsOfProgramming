@@ -15,19 +15,19 @@
 using namespace std;
 
 void menuControl() {
-    
+    system("clear");
     while (true) {
         int selected=0;
         
-        system("clear");
-        
-        cout << "1-Estrutura Sequencial\n"
-             << "2-Estrutura Condicional\n"
-             << "3-Estrutura Repeticao\n"
-             << "4-Vetores\n"
-             << "\nDigite da categoria e aperte enter: ";
-        
+        cout << "\n  1-Estrutura Sequencial\n"
+             << "  2-Estrutura Condicional\n"
+             << "  3-Estrutura Repeticao\n"
+             << "  4-Vetores\n"
+             << "  5-Encerrar\n"
+             << "\n Opção: ";
+        do{
         cin  >> selected;
+        }while (testeMenuOptions(selected, 5));
         
         system("clear");
         
@@ -44,6 +44,8 @@ void menuControl() {
             case 4:
                 cout << "Em progresso.Aguarde\n";
                 break;
+            case 5:
+                return;
             default:
                 break;
         }

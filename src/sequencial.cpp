@@ -239,7 +239,6 @@ void estruturaSequencial1() {
              << "Consumo Estimado de Etanol: "    << consumoEstimadoEtanol <<"L\n";
         cout.precision(2);
         cout << "Valor total gasto: R$ " << fixed << valorTotal <<"\n\n"
-        
              << "1-Repetir o exercicios.\n"
              << "2-Voltar ao menu anterior.\n"
              << "3-Voltar ao menu principal.\n";
@@ -272,12 +271,12 @@ void fGeometrica() {
         system("clear");
         
         int selected;
-        cout << "1 - Triangulo      (Hipotenusa)\n"
-             << "2 - Circurferencia (Comprimento e Area)\n"
-             << "3 - Quadrado       (Area Perimetro Diagonal)\n"
-             << "4 - Losango        (Lado Area Perimetro)\n"
-             << "5 - Voltar ao Menu Inicial"
-             << "\n\nAperte o numero referente ao exercicio que deseja executar e aperte enter: ";
+        cout << "  1 - Triangulo      (Hipotenusa)\n"
+             << "  2 - Circurferencia (Comprimento e Area)\n"
+             << "  3 - Quadrado       (Area Perimetro Diagonal)\n"
+             << "  4 - Losango        (Lado Area Perimetro)\n"
+             << "  5 - Voltar ao Menu Inicial"
+             << "\n\nOpção: ";
         
         do{
             cin >> selected;
@@ -319,11 +318,11 @@ void estruturaSequencialMenu() {
    while(true) {
         int selected = 0;
     
-        cout << "1 - Figuras Geometricas\n"
-             << "2 - Exercicio Combustivel\n"
-             << "3 - Exercicio Prestacao\n"
-             << "4 - Voltar ao menu inicial\n\n"
-             << "Digite o numero da categoria e aperte enter: ";
+        cout << "  1 - Figuras Geometricas\n"
+             << "  2 - Exercicio Combustivel\n"
+             << "  3 - Exercicio Prestacao\n"
+             << "  4 - Voltar ao menu inicial\n\n"
+             << "  Opção: ";
        do{
            cin >> selected;
        }while (testeMenuOptions(selected, 4) == false);
