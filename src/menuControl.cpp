@@ -14,6 +14,15 @@
 
 using namespace std;
 
+bool testeMenuOptions(int n,int tamanho) {
+    if (n < 1 || n > tamanho) {
+        cout << "Essa opção nao existe digite novamento: " ;
+        return false;
+    }
+    else return true;
+}
+
+
 void menuControl() {
     system("clear");
     while (true) {
@@ -24,10 +33,10 @@ void menuControl() {
              << "  3-Estrutura Repeticao\n"
              << "  4-Vetores\n"
              << "  5-Encerrar\n"
-             << "\n Opção: ";
+             << "\n  Opção: ";
         do{
         cin  >> selected;
-        }while (testeMenuOptions(selected, 5));
+        }while (testeMenuOptions(selected, 5) == false);
         
         system("clear");
         
@@ -53,14 +62,6 @@ void menuControl() {
     }
     
 }
-bool testeMenuOptions(int n,int tamanho) {
-    if (n < 1 || n > tamanho) {
-        cout << "Essa opção nao existe digite novamento: " ;
-        return false;
-    }
-    else return true;
-}
-
 
 
 

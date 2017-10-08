@@ -20,7 +20,6 @@ int main(){
          << "   Projeto Avaliação 2017/2\n\n"
          << "   Alunos : Lucas B.Brito\n"
          << "            Danickson Naves\n";
-    
     menuControl();
 }
 
