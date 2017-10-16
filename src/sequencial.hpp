@@ -12,11 +12,11 @@
 #include <stdio.h>
 
 #endif /* sequencial_hpp */
-void estruturaSequencialFG1();
-void estruturaSequencialFG2();
-void estruturaSequencialFG3();
-void estruturaSequencialFG4();
-void estruturaSequencial1();
-void estruturaSequencial2();
-void estruturaSequencialMenu();
-void fGeometrica();
+auto estruturaSequencialFG1() -> void;
+auto estruturaSequencialFG2() -> void;
+auto estruturaSequencialFG3() -> void;
+auto estruturaSequencialFG4() -> void;
+auto estruturaSequencial1() -> void;
+auto estruturaSequencial2() -> void;
+auto estruturaSequencialMenu() -> void;
+auto fGeometrica() -> void;

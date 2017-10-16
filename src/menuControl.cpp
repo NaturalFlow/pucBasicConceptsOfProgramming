@@ -14,7 +14,8 @@
 
 using namespace std;
 
-bool testeMenuOptions(int n,int tamanho) {
+auto testeMenuOptions(const int &n,const int &tamanho) -> bool
+{
     if (n < 1 || n > tamanho) {
         cout << "Essa opção nao existe digite novamento: " ;
         return false;
@@ -23,7 +24,8 @@ bool testeMenuOptions(int n,int tamanho) {
 }
 
 
-void menuControl() {
+auto menuControl() -> void
+{
     system("clear");
     while (true) {
         int selected=0;
@@ -54,7 +56,7 @@ void menuControl() {
                 cout << "Em progresso.Aguarde\n";
                 break;
             case 5:
-                return;
+                
             default:
                 break;
         }

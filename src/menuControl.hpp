@@ -13,5 +13,5 @@
 
 #endif /* menuControl_hpp */
 
-void menuControl();
-bool testeMenuOptions(int n,int tamanho);
+auto menuControl() -> void;
+auto testeMenuOptions(const int &n,const int &tamanho) -> bool;

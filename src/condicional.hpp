@@ -13,12 +13,12 @@
 
 #endif /* condicional_hpp */
 
-void estruturaCondicional1();
-void estruturaCondicional2();
-void estruturaCondicional3();
-void estruturaCondicional4();
-void estruturaCondicional5();
-void estruturaCondicional6();
-void estruturaCondicional7();
-void estruturaCondicional8();
-void estruturaCondicionalMenu();
+auto estruturaCondicional1() -> void;
+auto estruturaCondicional2() -> void;
+auto estruturaCondicional3() -> void;
+auto estruturaCondicional4() -> void;
+auto estruturaCondicional5() -> void;
+auto estruturaCondicional6() -> void;
+auto estruturaCondicional7() -> void;
+auto estruturaCondicional8() -> void;
+auto estruturaCondicionalMenu() -> void;

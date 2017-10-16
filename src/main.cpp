@@ -12,10 +12,12 @@
 #include "sequencial.hpp"
 #include "menuControl.hpp"
 #include "condicional.hpp"
+#include <iomanip>
 
 using namespace std;
 
-int main(){
+int main()
+{
     cout << "   Pontificia Universidade Catolica\n\n"
          << "   Projeto Avaliação 2017/2\n\n"
          << "   Alunos : Lucas B.Brito\n"

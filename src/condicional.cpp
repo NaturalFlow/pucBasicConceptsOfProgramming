@@ -16,9 +16,8 @@
 
 using namespace std;
 
-void estruturaCondicional1() {
-    
-
+auto estruturaCondicional1() -> void
+{
     int menu = 1;
     while(menu == 1){
         menu =0;
@@ -67,10 +66,6 @@ void estruturaCondicional1() {
         else cout << "Segue-se os numeros em ordem crescente:["
                   << nums[2] << ',' << nums[1] << ',' << nums[0] << "]\n\n";
 
-        
-        
-        
-
         system("clear");
  
         cout << "1-Repetir o exercicios.\n"
@@ -94,7 +89,9 @@ void estruturaCondicional1() {
         }
     }
 }
-void estruturaCondicional2() {
+        
+auto estruturaCondicional2() -> void
+{
     int menu = 1;
     while(menu == 1){
         menu =0;
@@ -133,7 +130,9 @@ void estruturaCondicional2() {
         }
     }
 }
-void estruturaCondicional3() {
+        
+auto estruturaCondicional3() -> void
+{
     int menu = 1;
     while(menu == 1){
         menu = 0;
@@ -185,7 +184,9 @@ void estruturaCondicional3() {
         }
     }
 }
-void estruturaCondicional4() {
+
+auto estruturaCondicional4() -> void
+{
     int menu = 1;
     while(menu == 1){
         menu =0;
@@ -214,7 +215,6 @@ void estruturaCondicional4() {
         << "\nJuros Total.....: R$ " << jurosTotal
         << "\nPreÁo final R$..: R$ " << totalPagar <<"\n";
         
-        
         cout << '\n'
         << "1-Repetir o exercicios.\n"
         << "2-Voltar ao menu anterior.\n"
@@ -237,7 +237,8 @@ void estruturaCondicional4() {
         }
     }
 }
-void estruturaCondicional5() {
+auto estruturaCondicional5() -> void
+{
     int menu = 1;
     while(menu == 1){
         menu =0;
@@ -281,7 +282,8 @@ void estruturaCondicional5() {
         }
     }
 }
-void estruturaCondicional6() {
+auto estruturaCondicional6() -> void
+{
     int menu = 1;
     while(menu == 1){
         menu =0;
@@ -346,7 +348,8 @@ void estruturaCondicional6() {
         }
     }
 }
-void estruturaCondicional7() {
+auto estruturaCondicional7() -> void
+{
     int menu = 1;
     while(menu == 1){
         menu = 0;
@@ -358,8 +361,6 @@ void estruturaCondicional7() {
         cin.ignore();
         cout << "Nome do Aluno(a): ";
         getline(cin, nome);
-        
-        
         
         for (int i = 0; i < 11; i++) {
             if (nome[0] == aK[i]){
@@ -398,7 +399,8 @@ void estruturaCondicional7() {
         }
     }
 }
-void estruturaCondicional8() {
+auto estruturaCondicional8() -> void
+{
     int menu = 1;
     while(menu == 1){
         menu =0;
@@ -440,7 +442,8 @@ void estruturaCondicional8() {
         }
     }
 }
-void estruturaCondicionalMenu() {
+auto estruturaCondicionalMenu() -> void
+{
     system("clear");
     bool menu = false;
     

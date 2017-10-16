@@ -13,7 +13,8 @@
 
 using namespace std;
 
-void estruturaSequencialFG1() {
+auto estruturaSequencialFG1() -> void
+{
     
     int menu = 1;
     
@@ -21,7 +22,7 @@ void estruturaSequencialFG1() {
         menu = 0;
         system("clear");
         
-        float catetoA=0,catetoB=0,hipotenusa=0;
+        float catetoA=0,catetoB=0;
         
         while(true) {
             cout << "Digite o valor de um cateto: ";
@@ -40,7 +41,7 @@ void estruturaSequencialFG1() {
         }
         system("clear");
         
-        hipotenusa = sqrt(pow(catetoA,2)+pow(catetoB,2));
+        const float hipotenusa = sqrt(pow(catetoA,2)+pow(catetoB,2));
         
         cout << "\nO triangulo com catetos "
              << catetoA << " e " << catetoB
@@ -72,7 +73,8 @@ void estruturaSequencialFG1() {
     }
 }
 
-void estruturaSequencialFG2() {
+auto estruturaSequencialFG2() -> void
+{
     int menu = 1;
     while(menu){
         menu=0;
@@ -121,7 +123,8 @@ void estruturaSequencialFG2() {
     
 }
 
-void estruturaSequencialFG3() {
+auto estruturaSequencialFG3() -> void
+{
     int menu=1;
     
     while(menu == 1){
@@ -174,8 +177,9 @@ void estruturaSequencialFG3() {
     }
 }
 
-void estruturaSequencialFG4() {
-    float lado = 0,area=0,diagonalMaior=0,perimetro=0,diagonalMenor=0;
+auto estruturaSequencialFG4() -> void
+{
+    float diagonalMaior=0;
     
     while (true) {
         cout << "Digite a Diagonal Maior do Losango: ";
@@ -186,10 +190,10 @@ void estruturaSequencialFG4() {
     }
     system("clear");
     
-    diagonalMenor = diagonalMaior/2;
-    area = diagonalMaior * diagonalMenor/2;
-    lado = sqrt(5*area)/2;
-    perimetro = lado * 4;
+    const float diagonalMenor = diagonalMaior/2,
+                area = diagonalMaior * diagonalMenor/2,
+                lado = sqrt(5*area)/2,
+                perimetro = lado * 4;
     
     cout << "Lado do Losango: " << lado          << '\n'
          << "Diagonal Maior.: " << diagonalMaior << '\n'
@@ -198,10 +202,11 @@ void estruturaSequencialFG4() {
          << "Area...........: " << area          << "\n\n";
 }
 
-void estruturaSequencial1() {
-    int menu =1;
+auto estruturaSequencial1() -> void
+{
+    int menu = 1;
     
-    while(menu == 1){
+    while(menu == 1) {
         menu = 0;
         system("clear");
         
@@ -262,10 +267,11 @@ void estruturaSequencial1() {
     }
 }
 
-void estruturaSequencial2() {
+auto estruturaSequencial2() -> void {
+    
 }
 
-void fGeometrica() {
+auto fGeometrica() -> void {
     
     while(true) {
         system("clear");
@@ -313,12 +319,14 @@ void fGeometrica() {
 
 }
 
-void estruturaSequencialMenu() {
+auto estruturaSequencialMenu() -> void
+{
     
    while(true) {
         int selected = 0;
     
-        cout << "  1 - Figuras Geometricas\n"
+        cout << "\n"
+             << "  1 - Figuras Geometricas\n"
              << "  2 - Exercicio Combustivel\n"
              << "  3 - Exercicio Prestacao\n"
              << "  4 - Voltar ao menu inicial\n\n"
