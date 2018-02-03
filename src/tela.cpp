@@ -34,7 +34,18 @@ auto mensagemDeErro(string texto)->void
     gotoxy(LEFT_PADDING+11,TOP_PADDING+HEIGHT);
     cout << texto;
 }
-
+auto showOptions(string texto1, string texto2, string texto3)->void
+{
+    gotoxy(20,TOP_PADDING+25);
+    cout << texto1;
+    gotoxy(20,TOP_PADDING+26);
+    cout << texto2;
+    gotoxy(20,TOP_PADDING+27);
+    cout << texto3;
+    gotoxy(10,TOP_PADDING+28);
+    cout << "Opçao: [ ]";
+    gotoxy(18,TOP_PADDING+28);
+}
 auto tela(string titulo)->void
 {
 	//Horizontal  Parte Superior

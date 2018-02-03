@@ -1,25 +1,20 @@
-//
-//  main.cpp
-//  Projeto Avaliacao part1 condi,sequencial
-//
-//  Created by Lucas Brito on 9/14/17.
-//  Copyright © 2017 Lucas Brito. All rights reserved.
-//
-
 #include <iostream>
-#include "sequencial.hpp"
 #include "menuControl.hpp"
-#include "condicional.hpp"
+#include "tela.h"
 #include <iomanip>
 
 using namespace std;
 
 int main()
 {
-    cout << "   Pontificia Universidade Catolica\n\n"
-         << "   Projeto Avaliação 2017/2\n\n"
-         << "   Alunos : Lucas B.Brito\n"
-         << "            Danickson Naves\n";
+    tela("PUC - PONTIFICIA UNIVERSIDADE CATOLICA");
+    centralizar("PROJETO AVALIACAO 2017/2 ",10);
+    centralizar("PROF.: ANIBAL VICENTE    ",12);
+    centralizar("ALUNO: LUCAS B.BRITO     ",14);
+    centralizar("ALUNO: DANICKSON NAVES   ",16);
+
+    gotoxy(16,33);
+    system("pause");
     menuControl();
 }
 

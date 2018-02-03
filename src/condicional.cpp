@@ -5,14 +5,11 @@
 //  Created by Lucas Brito on 9/19/17.
 //  Copyright © 2017 Lucas Brito. All rights reserved.
 //
-
+#include "tela.h"
 #include "condicional.hpp"
 #include <iostream>
 #include <string>
-#include "sequencial.hpp"
 #include "menuControl.hpp"
-
-
 
 using namespace std;
 
@@ -21,16 +18,18 @@ auto estruturaCondicional1() -> void
     int menu = 1;
     while(menu == 1){
         menu =0;
-        
-        system("clear");
-        
         int nums[3] = {};
         float input;
-        
-        cout << "Digite 3 numeros inteiros:\n";
+        system("cls");
+        tela("ORDENAR 3 NUMEROS INTEIROS");
+        centralizar("Numero 1: [  ]",8);
+        centralizar("Numero 2: [  ]",10);
+        centralizar("Numero 3: [  ]",12);
+        int inputColumn = 0;
         for(int i = 0; i < 3; i++) {
             while(true) {
-                cout << "Numero " << i+1 << ": ";
+                inputColumn+=2;
+                gotoxy(64,9+inputColumn);
                 cin  >> input;
                 if (input/float(int(input)) > 1){
                     cout << "Informe um numero valido(inteiro)\n";
@@ -42,39 +41,46 @@ auto estruturaCondicional1() -> void
                 }
             }
         }
-        
-        if (nums[0] <= nums[1] && nums[1] <= nums[2])
+
+        if (nums[0] <= nums[1] && nums[1] <= nums[2]) {
+            gotoxy(30,20);
             cout << "Segue-se os numeros em ordem crescente:["
                  << nums[0] << ',' << nums[1] << ',' << nums[2] << "]\n";
-        
-        else if (nums[0] <= nums[2] && nums[2] <= nums[1])
+        }
+
+        else if (nums[0] <= nums[2] && nums[2] <= nums[1]) {
+            gotoxy(30,20);
             cout << "Segue-se os numeros em ordem crescente:["
                  << nums[0] << ',' << nums[2] << ',' << nums[1] << "]\n";
-        
-        else if (nums[1] <= nums[0] && nums[0] <= nums[2])
+        }
+        else if (nums[1] <= nums[0] && nums[0] <= nums[2]) {
+            gotoxy(30,20);
             cout << "Segue-se os numeros em ordem crescente:["
                  << nums[1] << ',' << nums[0] << ',' << nums[2] << "]\n";
-        
-        else if (nums[1] <= nums[0] && nums[2] <= nums[0])
+        }
+
+        else if (nums[1] <= nums[0] && nums[2] <= nums[0]) {
+            gotoxy(30,20);
             cout << "Segue-se os numeros em ordem crescente:["
                  << nums[1] << ',' << nums[2] << ',' << nums[0] << "]\n";
-        
-        else if (nums[2] <= nums[0] && nums[0] <= nums[1])
+        }
+
+        else if (nums[2] <= nums[0] && nums[0] <= nums[1]) {
+            gotoxy(30,20);
             cout << "Segue-se os numeros em ordem crescente:["
                  << nums[2] << ',' << nums[0] << ',' << nums[1] << "]\n";
-        
-        else cout << "Segue-se os numeros em ordem crescente:["
-                  << nums[2] << ',' << nums[1] << ',' << nums[0] << "]\n\n";
+        }
 
-        system("clear");
- 
-        cout << "1-Repetir o exercicios.\n"
-             << "2-Voltar ao menu anterior.\n"
-             << "3-Voltar ao menu principal.\n";
+        else {
+            gotoxy(30,20);
+            cout << "Segue-se os numeros em ordem crescente:["
+                  << nums[2] << ',' << nums[1] << ',' << nums[0] << "]\n\n";
+        }
+        showOptions("1-Repetir o exercicios","2-Voltar ao menu anterior.","3-Voltar ao menu principal.");
         do{
             cin >> menu;
         }while (testeMenuOptions(menu, 3) == false);
-        
+
         switch (menu) {
             case 1:
                 break;
@@ -89,34 +95,35 @@ auto estruturaCondicional1() -> void
         }
     }
 }
-        
+
 auto estruturaCondicional2() -> void
 {
     int menu = 1;
     while(menu == 1){
         menu =0;
-        /*VARIAVEIS*/
         string capital;
-        
-        /*ENTRADAS*/
-        cout << "Digite o nome da capital de Goias: \n";
+        system("cls");
+        tela("CAPITAL DE GOIAS");
+        centralizar("Qual e a capital de Goias ? [           ]",9);
+        gotoxy(68,12);
+        cin.ignore();
         getline(cin,capital);
-        
-        system("clear");
 
-        /*SAIDAS*/
-        if (capital == "Goiania" || capital == "GOIANIA")
-            cout << "Resposta correta \n";
-        else cout << "Resposta Incorreta\n";
-        
-        cout << "1-Repetir o exercicios.\n"
-             << "2-Voltar ao menu anterior.\n"
-             << "3-Voltar ao menu principal.\n";
+
+        if (capital == "Goiania" || capital == "GOIANIA") {
+            gotoxy(41,20);
+            cout << "RESPOSTA CORRETA!!! =D";
+        }
+        else {
+            gotoxy(40,20);
+            cout << "RESPOSTA INCORRETA!!! =(";
+        }
+        showOptions("1-Repetir o exercicios","2-Voltar ao menu anterior.","3-Voltar ao menu principal.");
         do{
             cin >> menu;
         }while (testeMenuOptions(menu, 3) == false);
-        
-        switch (menu) {
+
+        switch (menu) {//Saidas
             case 1:
                 break;
             case 2:
@@ -130,46 +137,53 @@ auto estruturaCondicional2() -> void
         }
     }
 }
-        
+
 auto estruturaCondicional3() -> void
 {
     int menu = 1;
     while(menu == 1){
         menu = 0;
-        system("clear");
-        
+        system("cls");
+
         float num1,num2;
         char operador;
-        
-        cout << "Calculadora 4 opera;oes basicas:(+-*/)\n"
-             << "Informe os dados no formato num1 operador num2\n";
-        cin  >> num1 >> operador >> num2 ;
-        
+
+        tela("CALCULADORA DE 4 OPERAÇOES");
+        centralizar("Numero 1       [  ]",10);
+        centralizar("Operador(+-/*) [ ] ",12);
+        centralizar("Numero 2       [  ]",14);
+        gotoxy(67,13);
+        cin  >> num1;
+        gotoxy(67,15);
+        cin  >> operador;
+        gotoxy(67,17);
+        cin  >> num2;
+
         switch (operador) {
             case '+':
-                cout << "resultado da soma:" << num1 + num2;
+                gotoxy(35,20);
+                cout << "Resultado da soma:" << num1 + num2;
                 break;
             case '-':
-                cout << "resultado da diferen;a: " << num1 - num2;
+                gotoxy(35,20);
+                cout << "Resultado da diferen;a: " << num1 - num2;
                 break;
             case '*':
-                cout << "resultado do produto: " << num1 * num2;
+                gotoxy(35,20);
+                cout << "Resultado do produto: " << num1 * num2;
                 break;
             case '/':
-                cout << "resultado do quociente: " << num1 / num2;
+                gotoxy(35,20);
+                cout << "Resultado do quociente: " << num1 / num2;
                 break;
             default:
                 break;
         }
-
-        cout << '\n'
-             << "1-Repetir o exercicios.\n"
-             << "2-Voltar ao menu anterior.\n"
-             << "3-Voltar ao menu principal.\n";
+        showOptions("1-Repetir o exercicios","2-Voltar ao menu anterior.","3-Voltar ao menu principal.");
         do{
             cin >> menu;
         }while (testeMenuOptions(menu, 3) == false);
-        
+
         switch (menu) {
             case 1:
                 break;
@@ -190,39 +204,39 @@ auto estruturaCondicional4() -> void
     int menu = 1;
     while(menu == 1){
         menu =0;
-        
         //Variaveis
         int diasAtraso;
         float valorConta, multa, jurosTotal, totalPagar;
-        
-        //Entradas
-        cout << "Informe o valor da conta R$: ";
+        tela("QUANTO VOU PAGAR?");
+
+        centralizar("O valor da conta R$: ",8);
         cin  >>valorConta;
-        cout << "Informe os dias de atraso..: ";
+        centralizar("Informe os dias de atraso: ",10);
         cin  >>diasAtraso;
-        
+
         //Processamento
         jurosTotal = (diasAtraso/30)+valorConta*0.09;
         multa      = valorConta*0.05;
         totalPagar = valorConta+multa+jurosTotal;
-        
+
         //Saidas
         cout.precision(2);
-        cout <<  fixed
-        << "Dias de atraso..: " << int(diasAtraso)
-        << "\nValor da Conta..: R$ " << valorConta
-        << "\nTotal da Multa .: R$ " << multa
-        << "\nJuros Total.....: R$ " << jurosTotal
-        << "\nPreÁo final R$..: R$ " << totalPagar <<"\n";
-        
-        cout << '\n'
-        << "1-Repetir o exercicios.\n"
-        << "2-Voltar ao menu anterior.\n"
-        << "3-Voltar ao menu principal.\n";
+        gotoxy(35,16);
+        cout << "Dias de atraso..: " << int(diasAtraso);
+        gotoxy(35,17);
+        cout << "Valor da Conta..: R$ " << valorConta;
+        gotoxy(35,18);
+        cout << "Total da Multa .: R$ " << multa;
+        gotoxy(35,19);
+        cout << "Juros Total.....: R$ " << jurosTotal;
+        gotoxy(35,20);
+        cout << "Preço Final R$..: R$ " << totalPagar;
+
+        showOptions("1-Repetir o exercicios","2-Voltar ao menu anterior.","3-Voltar ao menu principal.");
         do{
             cin >> menu;
         }while (testeMenuOptions(menu, 3) == false);
-        
+
         switch (menu) {
             case 1:
                 break;
@@ -242,32 +256,34 @@ auto estruturaCondicional5() -> void
     int menu = 1;
     while(menu == 1){
         menu =0;
-        system("clear");
-        
+        system("cls");
         float salario,valorDoEmprestimo,qtdeParcelas,valorDasParcelas = 0.0;
-        
-        cout << "Salario do empregado..: ";
+
+        tela("MARGEM DE CONSIGNAÇAO");
+        centralizar("Salario do empregado:   [        ]",8);
+        centralizar("Valor do emprestimo:    [        ]",10);
+        centralizar("Quantidade de Parcelas: [  ]      ",12);
+        gotoxy(68,11);
         cin  >> salario;
-        cout << "Valor do emprestimo...: ";
+        gotoxy(68,13);
         cin  >> valorDoEmprestimo;
-        cout << "Quantidade de Parcelas: ";
+        gotoxy(68,15);
         cin  >> qtdeParcelas;
-        
+
         valorDasParcelas= valorDoEmprestimo/qtdeParcelas;
-        
-        cout << "\nValor das parcelas: " << valorDasParcelas;
-        
+        gotoxy(35,18);
+        cout << "Valor das parcelas: " << valorDasParcelas;
+        gotoxy(10,20);
         if (valorDasParcelas > (salario*0.3))
-             cout << "\nO Emprestimo nao pode ser concedido pois o valor das parcelas sao maiores que 30% do salario do empregado.\n";
-        else cout << "\n O Emprestimo pode ser concedido.Salario do empregado pode manter o valor das parcelas.\n";
-            
-        cout << "1-Repetir o exercicios.\n"
-             << "2-Voltar ao menu anterior.\n"
-             << "3-Voltar ao menu principal.\n";
+             cout << "O Emprestimo NAO PODE SER CONCEDIDO. O valor das parcelas sao maiores que 30% do salario do empregado.";
+        else cout << "O Emprestimo PODE SER CONCEDIDO. Salario do empregado pode manter o valor das parcelas.";
+
+        showOptions("1-Repetir o exercicios","2-Voltar ao menu anterior.","3-Voltar ao menu principal.");
+
         do{
             cin >> menu;
         }while (testeMenuOptions(menu, 3) == false);
-        
+
         switch (menu) {
             case 1:
                 break;
@@ -287,53 +303,61 @@ auto estruturaCondicional6() -> void
     int menu = 1;
     while(menu == 1){
         menu =0;
-        
+
         /*VARIAVEIS*/
         string nome;
         float nota1, nota2, nota3, nota4;
         float N1, N2, mediaFinal, frequencia;
         int aulas, faltas, presenca;
-        
+        system("cls");
         /*ENTRADAS*/
-        
-        cout << "Informe o Nome do Aluno: \n";
+        tela("MEDIA FINAL E FREQUENCIA");
+        cin.ignore();
+        centralizar("Nome do Aluno:[              ]",6);
+        gotoxy(60,9);
         getline(cin,nome);
-        cout << "informe a primeira nota do aluno   : \n";
+        centralizar("Primeira Nota do aluno : [   ]",8);
+        gotoxy(71,11);
         cin  >>nota1;
-        cout << "informe a segunda nota do aluno    : \n";
+        centralizar("Segunda Nota do aluno  : [   ]",10);
+        gotoxy(71,13);
         cin  >>nota2;
-        cout << "informe a terceira nota do aluno   : \n";
+        centralizar("Terceira Nota do aluno : [   ]",12);
+        gotoxy(71,15);
         cin  >>nota3;
-        cout << "informe a quarta nota do aluno     : \n";
+        centralizar("Quarta Nota do aluno   : [   ]",14);
+        gotoxy(71,17);
         cin  >>nota4;
-        cout << "informe o numero de aulas dadas    : \n";
+        centralizar("Numero de aulas dadas  : [   ]",16);
+        gotoxy(71,19);
         cin  >>aulas;
-        cout << "informe o numero de faltas do aluno: \n";
+        centralizar("Numero de Faltas       : [   ]",19);
+        gotoxy(72,22);
         cin  >>faltas;
-        
-        system("clear");
+
         /*PROCESSAMENTO/CALCULOS*/
         N1         = (nota1+nota2)/2;
         N2         = (nota3+nota3)/2;
         mediaFinal = (N1*0.4+N2*0.6);
         presenca   = (aulas - faltas);
         frequencia = (presenca*100)/aulas;
-        
+
         /*SAIDAS*/
-        cout <<"O aluno " << nome<< " obteve media final de : "<< mediaFinal <<"\n";
-        cout <<"Sua frequencia foi de: "<<frequencia<<"%\n";
-        
+        gotoxy(30,23);
+        cout << "O aluno " << nome<< " obteve media final de : "<< mediaFinal;
+        gotoxy(30,24);
+        cout << "Sua frequencia foi de: "<<frequencia<<"%";
+        gotoxy(30,25);
         if (mediaFinal >= 7.5 && frequencia >= 75)
-             cout << "O aluno foi aprovado. \n\n";
-        else cout << "O aluno foi reprovado.\n\n";
-        
-        cout << "1-Repetir o exercicios.\n"
-             << "2-Voltar ao menu anterior.\n"
-             << "3-Voltar ao menu principal.\n";
+             cout << "O aluno foi aprovado.";
+        else cout << "O aluno foi reprovado.";
+
+        showOptions("1-Repetir o exercicios","2-Voltar ao menu anterior.","3-Voltar ao menu principal.");
+
         do{
             cin >> menu;
         }while (testeMenuOptions(menu, 3) == false);
-        
+
         switch (menu) {
             case 1:
                 break;
@@ -357,34 +381,35 @@ auto estruturaCondicional7() -> void
         char aK[11] = {'A','B','C','D','E','F','G','H','I','J','K'};
         char lN[3]  = {'L','M','N'};
         char oZ[9] = {'O','P','Q','R','S','T','X','Y','Z'};
-        
+        system("cls");
+
         cin.ignore();
-        cout << "Nome do Aluno(a): ";
+        tela("SALA DE ACORDO COM O NOME");
+        centralizar("Nome do Aluno(a): [                         ]",9);
+        gotoxy(58,12);
         getline(cin, nome);
-        
+        gotoxy(40,20);
         for (int i = 0; i < 11; i++) {
             if (nome[0] == aK[i]){
-                cout << "Aluno(a) " << nome << " esta alocado na sala 100\n";
+                cout << "Aluno(a) " << nome << " esta alocado na sala 100";
                 break;
             }
             if (nome[0] == lN[i]){
-                cout << "Aluno(a) " << nome << " esta alocado na sala 110\n";
+                cout << "Aluno(a) " << nome << " esta alocado na sala 110";
                 break;
             }
             if (nome[0] == oZ[i]){
-                cout << "Aluno(a) " << nome << " esta alocado na sala 120\n";
+                cout << "Aluno(a) " << nome << " esta alocado na sala 120";
                 break;
             }
 
         }
+        showOptions("1-Repetir o exercicios","2-Voltar ao menu anterior.","3-Voltar ao menu principal.");
 
-        cout << "1-Repetir o exercicios.\n"
-             << "2-Voltar ao menu anterior.\n"
-             << "3-Voltar ao menu principal.\n";
         do{
             cin >> menu;
         }while (testeMenuOptions(menu, 3) == false);
-        
+
         switch (menu) {
             case 1:
                 break;
@@ -406,28 +431,27 @@ auto estruturaCondicional8() -> void
         menu =0;
         float resultado = 0, altura = 0;
         char sexo = 0;
-        
-        cout << " Digite sua altura: \n";
+        system("cls");
+        tela("PESO IDEAL");
+        centralizar("Altura:          [    ]",8);
+        centralizar("Sexo [F] ou [M]: [ ]  ",10);
+        gotoxy(67,11);
         cin  >> altura;
-        cout << " Digite seu sexo [F] para feminino ou [M] para masculino: \n";
+        gotoxy(67,13);
         cin  >> sexo;
-        
-        if(sexo == 'M'||sexo == 'M')
+
+        if(sexo == 'M'||sexo == 'm')
             resultado = 72.7*altura - 58;
         else if(sexo == 'F'||sexo == 'f')
             resultado = 62.1*altura - 44.7;
-        
-        system("clear");
-        
-        cout <<" O seu peso ideal e : " << resultado <<"kg\n\n";
-        
-        cout << "1-Repetir o exercicios.\n"
-             << "2-Voltar ao menu anterior.\n"
-             << "3-Voltar ao menu principal.\n";
+        gotoxy(43,15);
+        cout <<"Peso Ideal: " << resultado <<" kg";
+        showOptions("1-Repetir o exercicios","2-Voltar ao menu anterior.","3-Voltar ao menu principal.");
+
         do{
             cin >> menu;
         }while (testeMenuOptions(menu, 3) == false);
-        
+
         switch (menu) {
             case 1:
                 break;
@@ -444,28 +468,30 @@ auto estruturaCondicional8() -> void
 }
 auto estruturaCondicionalMenu() -> void
 {
-    system("clear");
+    system("cls");
     bool menu = false;
-    
+
     while(menu == false) {
         int selected = 0;
-        
-        cout << "  1 – Ordenar 3 Numeros Inteiros\n"
-        << "  2 – Receber o nome da capital de Goias\n"
-        << "  3 – Calculadora\n"
-        << "  4 - Calcular o Quadrado e a Raiz Quadrada\n"
-        << "  5 – Margem de consignaçao\n"
-        << "  6 – Media Final e Frequencias\n"
-        << "  7 - Alunos Pelo Nome\n"
-        << "  8 – Peso Ideal\n"
-        << "  9 – Voltar ao Menu Principal\n\n"
-        << " Opção: ";
+        tela("ESTRUTURA CONDICIONAL");
+
+        centralizar("1-Ordenar 3 Numeros Inteiros           ",8);
+        centralizar("2-Receber o nome da capital de Goias   ",9);
+        centralizar("3-Calculadora                          ",10);
+        centralizar("4-Calcular o Quadrado e a Raiz Quadrada",11);
+        centralizar("5-Margem de consignacao                ",12);
+        centralizar("6-Media Final e Frequencias            ",13);
+        centralizar("7-Alunos Pelo Nome                     ",14);
+        centralizar("8-Peso Ideal                           ",15);
+        centralizar("9-Voltar ao Menu Principal             ",16);
+        centralizar("Opcao: [ ]                            ",20);
         do{
+            gotoxy(49,23);
             cin >> selected;
         }while (testeMenuOptions(selected, 9) == false);
-        
-        system("clear");
-        
+
+        system("cls");
+
         switch (selected) {
             case 1:
                 estruturaCondicional1();
@@ -494,7 +520,7 @@ auto estruturaCondicionalMenu() -> void
             case 9:
                 menuControl();
                 break;
-    
+
             default:
                 cout << "Think";
         }

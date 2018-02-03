@@ -5,10 +5,12 @@
 //  Created by Lucas Brito on 9/19/17.
 //  Copyright © 2017 Lucas Brito. All rights reserved.
 //
-
+#include "tela.h"
 #include "menuControl.hpp"
 #include "sequencial.hpp"
 #include "condicional.hpp"
+#include "repeticao.h"
+#include "vetorial.h"
 #include <iostream>
 
 
@@ -17,7 +19,7 @@ using namespace std;
 auto testeMenuOptions(const int &n,const int &tamanho) -> bool
 {
     if (n < 1 || n > tamanho) {
-        cout << "Essa opção nao existe digite novamento: " ;
+        mensagemDeErro("Essa opção nao existe digite novamente");
         return false;
     }
     else return true;
@@ -26,22 +28,23 @@ auto testeMenuOptions(const int &n,const int &tamanho) -> bool
 
 auto menuControl() -> void
 {
-    system("clear");
+    system("cls");
     while (true) {
         int selected=0;
-        
-        cout << "\n  1-Estrutura Sequencial\n"
-             << "  2-Estrutura Condicional\n"
-             << "  3-Estrutura Repeticao\n"
-             << "  4-Vetores\n"
-             << "  5-Encerrar\n"
-             << "\n  Opção: ";
+        tela("MENU PRINCIPAL");
+        centralizar("1-Estrutura Sequencial ",8);
+        centralizar("2-Estrutura Condicional",10);
+        centralizar("3-Estrutura Repeticao  ",12);
+        centralizar("4-Vetores              ",14);
+        centralizar("5-Encerrar             ",16);
+        centralizar("Opção: [ ]",18);
         do{
+        gotoxy(64,21);
         cin  >> selected;
         }while (testeMenuOptions(selected, 5) == false);
-        
-        system("clear");
-        
+
+        system("cls");
+
         switch (selected) {
             case 1:
                 estruturaSequencialMenu();
@@ -50,19 +53,19 @@ auto menuControl() -> void
                 estruturaCondicionalMenu();
                 break;
             case 3:
-                cout << "Em Progresso.Aguarde\n";
+                estruturaRepeticaoMenu();
                 break;
             case 4:
-                cout << "Em progresso.Aguarde\n";
+                estruturaVetorialMenu();
                 break;
             case 5:
-                
+                break;
             default:
                 break;
         }
-        
+
     }
-    
+
 }
 
 
